@@ -34,7 +34,7 @@ task copyData(dependsOn: subprojects.build, type: Copy) {
 }
 
 task copyDeps(dependsOn: subprojects.build, type: Copy) {
-    from subprojects.collect { it.configurations.runtime }
+    from subprojects.collect { it.configurations.runtimeClasspath }
     into "$buildDir/release/SSW_${version}/lib"
 }
 
